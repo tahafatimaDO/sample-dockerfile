@@ -2,4 +2,4 @@ FROM python:latest
 WORKDIR /workspace
 ENTRYPOINT ["sleep"]
 
-CMD ["10"]
+CMD ["1000000"]
