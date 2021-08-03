@@ -1,5 +1,4 @@
-FROM python:latest
+FROM golang:1.12-alpine as builder
 WORKDIR /workspace
-ENTRYPOINT ["sleep"]
-
-CMD ["1000000"]
+COPY . .
+RUN go build -mod=vendor -o bin/hello
