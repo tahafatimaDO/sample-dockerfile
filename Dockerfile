@@ -1,4 +1,4 @@
 FROM python:latest
 MKDIR /workspace
 WORKDIR /workspace
-CMD ["echo","hello"]
+CMD ["sleep","1000000"]
