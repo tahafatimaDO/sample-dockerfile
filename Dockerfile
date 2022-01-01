@@ -1,5 +1,5 @@
 FROM golang:1.12-alpine as builder
-RUN apt-get install -y git
+RUN yum install -y git
 WORKDIR /app
 RUN git clone git@github.com:tahafatimaDO/html_demo_site.git
 # The build context is set to the directory where the repo is cloned.
