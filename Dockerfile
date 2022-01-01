@@ -1,8 +1,5 @@
 FROM golang:1.12-alpine as builder
-RUN apk update
-RUN apk add git
 WORKDIR /app
-RUN git clone https://github.com/tahafatimaDO/html_demo_site.git
 # The build context is set to the directory where the repo is cloned.
 # This will copy all files in the repo to /app inside the container.
 # If your app requires the build context to be set to a subdirectory inside the repo, you
@@ -16,6 +13,10 @@ FROM alpine
 # Install any required dependencies.
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
+RUN apk update
+RUN apk add git
+RUN git clone https://github.com/tahafatimaDO/html_demo_site.git
+
 # Copy the binary from the builder stage and set it as the default command.
 COPY --from=builder /app/bin/hello /usr/local/bin/
 CMD ["hello"]
